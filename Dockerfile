@@ -27,3 +27,5 @@ RUN cat /etc/pki/tls/certs/hpca2ssG2_ns.pem >> /etc/pki/tls/certs/ca-bundle.crt
 RUN keytool -v -import -noprompt -trustcacerts -alias hpca2ss -file /etc/pki/tls/certs/hpca2ss_ns.pem -keystore ${JAVA_HOME}/lib/security/cacerts -storepass changeit
 RUN keytool -v -import -noprompt -trustcacerts -alias hpca2ssG2 -file /etc/pki/tls/certs/hpca2ssG2_ns.pem -keystore ${JAVA_HOME}/lib/security/cacerts -storepass changeit
 
+# Update gerrit-entrypoint.sh
+COPY gerrit-entrypoint.sh /gerrit-entrypoint.sh
