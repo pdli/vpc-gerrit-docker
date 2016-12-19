@@ -14,6 +14,7 @@ RUN /change-gerrit-shell.sh
 # Stablize ssh key and known hosts
 RUN gosu ${GERRIT_USER} mkdir ${GERRIT_HOME}/.ssh
 COPY id_rsa ${GERRIT_HOME}/.ssh/id_rsa
+RUN chmod 600 ${GERRIT_HOME}/.ssh/id_rsa
 COPY known_hosts ${GERRIT_HOME}/.ssh/known_hosts
 RUN chown ${GERRIT_USER}:${GERRIT_USER} ${GERRIT_HOME}/.ssh/id_rsa
 RUN chown ${GERRIT_USER}:${GERRIT_USER} ${GERRIT_HOME}/.ssh/known_hosts
