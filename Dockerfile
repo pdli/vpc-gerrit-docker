@@ -1,14 +1,7 @@
 FROM openfrontier/gerrit:2.12.6
 
-# Add proxy
-COPY .proxy /root/.proxy
-RUN source /root/.proxy
-
 # Change apk repository
 COPY repositories /etc/apk/repositories
-
-# Install vim
-RUN apk add vim
 
 # Change gerrit shell
 COPY change-gerrit-shell.sh /change-gerrit-shell.sh
