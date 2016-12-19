@@ -1,0 +1,1 @@
+Dockerized gerrit customized for VPC
