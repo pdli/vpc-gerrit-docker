@@ -7,6 +7,9 @@ RUN source /root/.proxy
 # Change apk repository
 COPY repositories /etc/apk/repositories
 
+# Install vim
+RUN apk add vim
+
 # Change gerrit shell
 COPY change-gerrit-shell.sh /change-gerrit-shell.sh
 RUN /change-gerrit-shell.sh
